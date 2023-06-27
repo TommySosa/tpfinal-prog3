@@ -2,6 +2,7 @@ import './App.css';
 import Header from "./components/Header";
 import Menu from './components/Menu';
 import Footer from './components/Footer';
+import Tabla from './components/Tabla'
 
 function App() {
   return (
@@ -13,10 +14,9 @@ function App() {
         <Menu></Menu>
       </div>
       <div className='box content'>
-        
-      </div>
-      <div className='box lateral'>
-
+        <div className='tabla-container'>
+          <Tabla></Tabla>
+        </div>
       </div>
       <div className='box footer'>
         <Footer></Footer>

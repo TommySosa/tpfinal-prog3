@@ -13,10 +13,10 @@ body{
   height: 100vh;
   grid-template-areas: 'header header'
                        'menu menu'
-                       'content lateral'
+                       'content content'
                        'footer footer';
   grid-template-rows: 10% 10% auto 10%;
-  grid-template-columns: 60% auto;
+  grid-template-columns: auto;
 }
 .box{
   text-align: center;
@@ -33,11 +33,58 @@ body{
   grid-area: content;
   background-color: yellow;
 }
-.lateral{
+/* .lateral{
   grid-area: lateral;
   background-color: orange;
-}
+} */
 .footer{
   grid-area: footer;
   background-color: blue;
+}
+.tabla-container {
+  margin-top: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tabla-admin{
+  display: flex;
+  align-items: center;
+}
+.table-bordered{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,td{
+  border: 1px solid black;
+  padding: 2em;
+  text-align: center;
+}
+.botones{
+  margin-left: 1px;
+  margin-right: 1px;
+}
+.boton-pg{
+  background-color: #2eb15e;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+.boton-pe{
+  background-color: #ffbc14;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+.boton-pp{
+  background-color: #eb2a2a;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+.botonGoles{
+  background-color: #11b9ec;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
 }
