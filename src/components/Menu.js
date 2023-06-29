@@ -1,7 +1,8 @@
 import { Route, BrowserRouter as Router, Routes, Link} from 'react-router-dom';
-function Menu(){
+import { useState } from 'react';
+function Menu(){    
     return(
-        <div>
+        <div className='botones-container'>
             <Link to={"/login" }>
                 <button>Iniciar sesión</button>
             </Link>

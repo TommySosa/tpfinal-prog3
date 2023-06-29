@@ -2,11 +2,13 @@ import './forms.css';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Tabla from './Tabla';
 function Login(){
     const [password, setPassword] = useState('')
     const [confPass, setConfPass] = useState('')
     const [login, setLogin] = useState([])
     const [mensajeError, setMensajeError] = useState('')
+    const [usuarioLogeado, setUsuarioLogeado] = useState(null)
  
     const baseURL = 'http://localhost:3005/auth/login'
 
@@ -33,6 +35,7 @@ function Login(){
                 "contraseña": password,
             }).then((response) => {
                 setLogin(response.data)
+                
             }).catch((error) =>{
                 if (error.response && error.response.status === 401){
                     setMensajeError('Contraseña incorrecta')
@@ -44,6 +47,7 @@ function Login(){
     }
 
     useEffect(()=>{
+        localStorage.setItem('usuario', JSON.stringify(login))
         console.log(login);
     },[login])
     return(
@@ -68,10 +72,12 @@ function Login(){
                 <input type='password' name='password' onChange={onChangePass}></input>
                 <label>Confirmar contraseña</label>
                 <input type='password' name='confPass' onChange={onChangeConfPass}></input>
-                {password !== confPass && confPass !== "" ? <p>Las contraseñas no coinciden</p> : null}
+                {password !== confPass && confPass !== "" ? <p className='errores'>Las contraseñas no coinciden</p> : null}
 
-                {mensajeError!= '' ? <p>{mensajeError}</p> : null}
-                <button type='submit'>Iniciar sesión</button>
+                {mensajeError!= '' ? <p className='errores'>{mensajeError}</p> : null}
+                
+                    <button type='submit'>Iniciar sesión</button>
+                
                 <Link to={'/'}>
                     <button>
                         Volver

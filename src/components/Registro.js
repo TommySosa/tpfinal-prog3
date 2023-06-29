@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './forms.css';
-import { Link, redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 function Registro() {
     const [nombre, setNombre] = useState('')
@@ -86,17 +86,21 @@ function Registro() {
 
                 <label htmlFor='contraseña'>Contraseña</label>
                 <input type='password' name='contraseña' value={password} onChange={onChangePass}></input>
+                
 
                 <label htmlFor='confcontraseña'>Confirmar contraseña</label>
                 <input type='password' name='confcontraseña' value={confPass} onChange={onChangeConfPass}></input>
-                {password !== confPass && confPass !== "" ? <p>Las contraseñas no coinciden</p>:null}
+                {password !== confPass && confPass !== "" ? <p className='errores'>Las contraseñas no coinciden</p>:null}
                 <label>Rol</label>
-                <select id='rol' value={rol} onChange={onChangeRol}>
+                <select required id='rol' value={rol} onChange={onChangeRol}>
+                    <option disabled selected>Elija el rol</option>
                     <option value="Usuario">Usuario</option>
                     <option value="Administrador">Administrador</option>
                 </select>
 
-                <button type='submit'>Registrarse</button>
+                
+                    <button type='submit'>Registrarse</button>
+                
                 <Link to={'/'}>
                     <button>
                         Volver

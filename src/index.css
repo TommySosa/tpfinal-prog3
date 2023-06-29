@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
 *,
 *::after,
 *::before {
@@ -7,6 +8,8 @@
 }
 body{
   color: black;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1rem;
 }
 .grid-layout{
   display: grid;
@@ -23,26 +26,27 @@ body{
 }
 .header{
   grid-area: header;
-  background-color: red;
+  background-color: #122037;
+  color:#fafafa;
+  font-size: 1.4rem;
 }
 .menu{
   grid-area: menu;
-  background-color: green;
+  background: rgb(18,32,55);
+background: linear-gradient(180deg, rgba(18,32,55,1) 0%, rgba(20,92,141,1) 35%);
 }
 .content{
   grid-area: content;
-  background-color: yellow;
+  background-color: #fafafa;
 }
-/* .lateral{
-  grid-area: lateral;
-  background-color: orange;
-} */
 .footer{
   grid-area: footer;
-  background-color: blue;
+  background: rgb(18,32,55);
+  background: linear-gradient(360deg, rgba(18,32,55,1) 0%, rgba(20,92,141,1) 35%);
+  margin-top: 2em;
 }
 .tabla-container {
-  margin-top: 5em;
+  margin-top: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,6 +58,7 @@ body{
 .table-bordered{
   border: 1px solid black;
   border-collapse: collapse;
+  font-size: 1.1rem;
 }
 th,td{
   border: 1px solid black;
@@ -82,9 +87,32 @@ th,td{
   border-radius: 10px;
   border: none;
 }
-.botonGoles{
+.botonVer{
   background-color: #11b9ec;
   padding: 8px;
   border-radius: 10px;
   border: none;
+}
+.botones-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+.botones-container button{
+  background-color: #209bd8;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  color: #fafafa;
+  font-size: 1.2rem;
+}
+
+.errores{
+  color: red;
+}
+.tabla-container-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #209bd8;
 }

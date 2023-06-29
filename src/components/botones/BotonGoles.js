@@ -1,5 +1,6 @@
 
-function BotonGoles(){
+function BotonGoles(props){
+    const {equipo} = props
     return(
         <button type="button" className="botones botonGoles">GF - GC</button>
     )
