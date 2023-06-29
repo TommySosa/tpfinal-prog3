@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.form-container {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    height: 100vh; /* Opcional: ajustar la altura del contenedor según tus necesidades */
+  }
+  
+  .form {
+    max-width: 400px; /* Ancho máximo del formulario */
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .form label {
+    display: block; /* Mostrar cada label en una línea separada */
+    margin-bottom: 5px; /* Añadir un margen inferior para separar los elementos */
+  }
+  .form input,
+.form select {
+  display: block; /* Mostrar cada input y select en una línea separada */
+  width: 100%; /* Asegurarse de que ocupen el ancho completo del contenedor */
+  margin-bottom: 10px; /* Añadir un margen inferior para separar los elementos */
+}
+.form button{
+    margin-top: 2em;
+    padding: 0.6em;
+}
+
+  

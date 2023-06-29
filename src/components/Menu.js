@@ -1,8 +1,13 @@
+import { Route, BrowserRouter as Router, Routes, Link} from 'react-router-dom';
 function Menu(){
     return(
         <div>
-            <button>Registrarse</button>
-            <button>Iniciar sesión</button>
+            <Link to={"/login" }>
+                <button>Iniciar sesión</button>
+            </Link>
+            <Link to={"/registro" }>
+                <button>Registrarse</button>
+            </Link>
             
         </div>
     )

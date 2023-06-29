@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import BotonEmpataron from './botones/BotonEmpataron';
 import BotonPerdieron from './botones/BotonPerdieron';
+import { Link } from 'react-router-dom';
 
 const baseURL = 'http://localhost:3005/api/equipos';
 
@@ -17,11 +18,13 @@ function Tabla() {
         axios.get(baseURL).then((response) => {
             setEquipo(response.data);
         })
-            .catch(error => {
+        .catch(error => {
                 console.error(error);
-            })
+        })
     }, [equipo])
+
     if (!equipo) return null
+
     return (
         <table className='table-bordered'>
             <thead>
@@ -56,12 +59,15 @@ function Tabla() {
                             <td>{equipo.goles_contra}</td>
                             <td>{equipo.diferencia_goles}</td>
                             <td>
-                                <BotonGanaron texto="+3" clase="botones boton-pg" equipo={equipo}></BotonGanaron>
+                                <BotonGanaron texto="+3" clase="botones boton-pg" equipo={equipo} funcion=""></BotonGanaron>
                                 <BotonEmpataron texto="+1" clase="botones boton-pe" equipo={equipo}></BotonEmpataron>
                                 <BotonPerdieron texto="+0" clase="botones boton-pp" equipo={equipo}></BotonPerdieron>
                             </td>
                             <td>
+                                <Link to={"/goles/{id}"}>
+
                                 <BotonGoles></BotonGoles>
+                                </Link>
                             </td>
                         </tr>
                     ))}
